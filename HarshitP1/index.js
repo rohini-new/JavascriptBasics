@@ -583,4 +583,4 @@ const fruits = ["apple", "litchi", "mango", "kiwi"];
 //   return acc;
 // }, []);
 
-// console.log(flat);
+console.log(flat);
