@@ -583,4 +583,48 @@ const fruits = ["apple", "litchi", "mango", "kiwi"];
 //   return acc;
 // }, []);
 
-console.log(flat);
+// console.log(flat);
+
+// Subset Check: Write a function to check if one set is a subset of another set.
+
+// function subsetCheck(set1, set2) {
+//   return [...set1].every((ele) => set2.has(ele));
+// }
+// const set1 = new Set([1, 2, 3]);
+// const set2 = new Set([1, 3, 8, 2, 9]);
+// console.log(subsetCheck(set1, set2));
+
+// function supersetCheck(set1, set2) {
+//   return [...set2].every((ele) => set1.has(ele));
+// }
+// // const set3 = new Set([1, 2, 3]);
+// // const set4 = new Set([3, 2,1]);
+// console.log(supersetCheck(set1, set2));
+
+//symmetric difference
+
+// const set1 = new Set([1, 2, 3, 4]);
+// const set2 = new Set([1, 4, 7]);
+
+// function intersection(setA, setB) {
+//   return new Set([...setA].filter((ele) => setB.has(ele)));
+// }
+
+// const sym = [...set1]
+//   .filter((ele) => !intersection(set1, set2).has(ele))
+//   .concat([...set2].filter((ele) => !intersection(set1, set2).has(ele)));
+// console.log(sym);
+
+// const setstring = new Set([1, 4, 1, 8, 3, 4]);
+// for (let str of setstring) {
+//   console.log(str);
+// }
+
+// setstring.forEach((val) => console.log(val));
+// console.log(setstring);
+// console.log(setstring.size);
+// console.log(setstring.has(8));
+// console.log(setstring);
+// setstring.add(99);
+// setstring.delete(1);
+// console.log(setstring);
