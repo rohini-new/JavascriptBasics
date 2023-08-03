@@ -620,11 +620,11 @@ const fruits = ["apple", "litchi", "mango", "kiwi"];
 //   console.log(str);
 // }
 
-setstring.forEach((val) => console.log(val));
-console.log(setstring);
-console.log(setstring.size);
-console.log(setstring.has(8));
-console.log(setstring);
-setstring.add(99);
-setstring.delete(1);
-console.log(setstring);
+// setstring.forEach((val) => console.log(val));
+// console.log(setstring);
+// console.log(setstring.size);
+// console.log(setstring.has(8));
+// console.log(setstring);
+// setstring.add(99);
+// setstring.delete(1);
+// console.log(setstring);
