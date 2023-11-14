@@ -628,3 +628,317 @@ const fruits = ["apple", "litchi", "mango", "kiwi"];
 // setstring.add(99);
 // setstring.delete(1);
 // console.log(setstring);
+
+// const myMap = new Map();
+// const age = "age";
+// myMap.set("fName", "Rohini");
+// myMap.set("lName", "Bharti");
+// myMap.set(age, 25);
+// console.log(myMap);
+// console.log(myMap.get(age));
+// for (let key of myMap.keys()) {
+//   console.log(key);
+// }
+// console.log([...myMap.keys()]);
+// console.log([...myMap.values()]);
+// console.log([...myMap.entries()]);
+// myMap.forEach((key, val) => console.log(`${key} - ${val}`));
+
+// for (let val of myMap.values()) {
+//   console.log(val);
+// }
+
+// console.log(`name is - ${myMap.get("fName")} ${myMap.get("lName")}`);
+
+// for ([key, val] of myMap.entries()) {
+//   console.log(key, val);
+// }
+
+// for (let [key, val] of myMap) {
+//   console.log(key, val);
+// }
+
+// function sortString(str) {
+//   return str.split("").sort().join("");
+// }
+
+// function findAnagrams(words) {
+//   const anagramGroups = new Map();
+
+//   for (const word of words) {
+//     const sortedWord = sortString(word);
+//     if (anagramGroups.has(sortedWord)) {
+//       anagramGroups.get(sortedWord).push(word);
+//     } else {
+//       anagramGroups.set(sortedWord, [word]);
+//     }
+//   }
+
+//   const result = [];
+//   for (const group of anagramGroups.values()) {
+//     if (group.length > 1) {
+//       result.push(group);
+//     }
+//   }
+
+//   return result;
+// }
+
+// // Example usage:
+// const wordsList = [
+//   "listen",
+//   "silent",
+//   "enlist",
+//   "hello",
+//   "world",
+//   "act",
+//   "cat",
+// ];
+// const anagrams = findAnagrams(wordsList);
+// console.log(anagrams);
+
+// const orders = [
+//   ["product", "Lip Gloss"],
+//   ["Brand", "Rom&nd"],
+//   ["Color", "Fig fig"],
+//   ["OId", 1234],
+// // ];
+// const oMap = new Map("orders");
+// console.log(oMap);
+
+// const orderObj = {
+//   product: "Lip gloss",
+//   Brand: "Rom&nd",
+//   Color: "Fig fig",
+//   OID: 1234,
+// };
+
+// const orderMap = new Map(Object.entries(orderObj));
+// console.log(orderMap);
+
+//Count the occurrences of each element in an array using a Map.
+// const arr = [2, 4, 5, 2, 6, 4, 5, 8, 2];
+// const arrMap = new Map();
+// for (let num of arr) {
+//   if (arrMap.has(num)) {
+//     arrMap.set(num, arrMap.get(num) + 1);
+//   } else {
+//     arrMap.set(num, 1);
+//   }
+// }
+// console.log(arrMap);
+
+// // Group an array of words by their first letter using a Map
+// const arr = [
+//   "rohini",
+//   "ragini",
+//   "nikita",
+//   "naagin",
+//   "shraddha",
+//   "shreya",
+//   "anushka",
+// ];
+// const arrMap = new Map();
+// for (let word of arr) {
+//   if (arrMap.has(word[0])) {
+//     arrMap.get(word[0]).push(word);
+//   } else {
+//     arrMap.set(word[0], [word]);
+//   }
+// }
+
+// arrMap.forEach((key, val) => {
+//   console.log(key, val);
+// });
+
+// Remove duplicate elements from an array using a Map.
+// const arr = [1, 3, 6, 2, 6, 3, 7, 3];
+// const mapUnique = new Map();
+// arr.forEach((num) => {
+//   if (!mapUnique.has(num)) mapUnique.set(num, 1);
+// });
+// console.log([...mapUnique.keys()]);
+
+//compare two strings are anagram
+// let str1 = "listen";
+// let str2 = "silent";
+
+// function createMap(str) {
+//   const strMap = new Map();
+//   for (let i of str) {
+//     if (strMap.has(i)) {
+//       strMap.set(i, strMap.get(i) + 1);
+//     } else {
+//       strMap.set(i, 1);
+//     }
+//   }
+//   return strMap;
+// }
+
+// console.log([...createMap(str1)]);
+// console.log([...createMap(str2)]);
+
+// console.log(createMap(str1) == createMap(str2));
+//   console.log(true);
+// }
+
+// const user1 = {
+//   userName: "Rohini",
+//   userId: 123,
+//   age: 25,
+//   about: function (job) {
+//     console.log(
+//       `user is ${this.userName} and ${this.age} years old and works as a ${job}`
+//     );
+//   },
+// };
+
+const user2 = {
+  userName: "Roshni",
+  userId: 125,
+  age: 27,
+  about: () => {
+    console.log(this.userName);
+  },
+};
+// var userName = "global";
+// user2.about.call(user2);
+// user1.about.call(user2, "dev");
+// user1.about.apply(user2, ["software tester"]);
+// const laterFunction = user1.about.bind(user2, ["SAP tester"]);
+// laterFunction();
+
+// user1.about.call(user1);
+// user1.about = function () {
+//   console.log("changed about");
+// };
+// user1.about.call(user1);
+
+// user1About();
+
+// function foo() {
+//   console.log(this.a);
+// }
+
+// const obj = { a: 2, foo: foo };
+
+// let functionLater = obj.foo;
+// functionLater();
+
+let createFunctions = {
+  about: function () {
+    return `${this.firstName} is  ${this.age} years old`;
+  },
+
+  is18: function () {
+    return this.age >= 18;
+  },
+};
+function createUser(firstName, lastName, email, age, address) {
+  const user = Object.create(createFunctions);
+  user.firstName = firstName;
+  user.lastName = lastName;
+  user.age = age;
+  user.email = email;
+  user.address = address;
+  // user.about = createFunctions.about;
+  // user.is18 = createFunctions.is18;
+
+  return user;
+}
+
+let userOne = createUser("Rohini", "Bharti", "bkbd@gmail.com", 18, "hsvh");
+// console.log(userOne.__proto__);
+let userTwo = createUser("Rohit", "Ananad", "bkbdjvj@gmail.com", 28, "hsvhhk");
+// console.log(userTwo);
+// console.log(userOne.is18());
+// console.log(userTwo.about());
+
+const objParent = {
+  brand: "Dior",
+  product: "lip oil",
+  price: 3000,
+};
+
+const objChild = Object.create(objParent);
+// objChild.brand = "Clarins";
+// console.log(objChild);
+// console.log(objChild.price);
+
+// objParent.price = 4000;
+// console.log(objChild.price);
+
+// let fruit = prompt("Which fruit to buy?", "apple");
+
+// let bag = {
+//   [fruit]: 5, // the name of the property is taken from the variable fruit
+// };
+
+// console.log(bag[fruit]);
+// console.log(bag.apple);
+// console.log(bag.appleeee);
+
+// const user = {};
+// user.name = "John";
+// user.surname = "Smith";
+// user.name = "Pete";
+// delete user.name;
+// console.log(user);
+
+function isEmptyObj(obj) {
+  let len = 0;
+  for (let key in obj) {
+    len++;
+  }
+  return !len;
+}
+// const user = {};
+// user.name = "John";
+
+// console.log(isEmptyObj(user));
+
+let salaries = {
+  // John: 100,
+  // Ann: 160,
+  // Pete: 130,
+};
+
+let sum = 0;
+for (let person in salaries) {
+  // if (!isEmptyObj(salaries)) sum += salaries[person];
+  sum += salaries[person];
+}
+// console.log(sum);
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if (typeof obj[key] === "number") obj[key] *= 2;
+  }
+}
+
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu",
+};
+multiplyNumeric(menu);
+// console.log(menu);
+var myObject = { key: "value" };
+console.log(myObject.toString());
+
+var customObject = {
+  key: "value",
+  toString: function () {
+    return "Custom Object: " + this.key;
+  },
+};
+
+console.log(customObject.toString()); // "Custom Object: value"
+
+function myFunction(a, b) {
+  return a + b;
+}
+
+var functionString = myFunction.toString();
+
+console.log(functionString);
